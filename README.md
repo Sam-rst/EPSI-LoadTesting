@@ -1,14 +1,33 @@
-# 1. Découverte
-Projet de cours sur de la clean architecture
+# 📌 **Tests de charge avec Locust**
+Ce projet utilise **Locust** pour effectuer des tests de charge sur le serveur Express.js.
 
-## Création du projet (Optionel : juste pour retenir les commandes)
-```bash
-npm init
-npm install express --save
+### 🚀 **1. Installation de Locust**
+Assurez-vous que **Python 3** est installé, puis installez **Locust** avec :
+
+```sh
+cd test/load/
+pip install -r requirements.txt
 ```
 
-## Lancement du serveur
-```bash
-npm install
+### 🏁 **2. Lancer les tests avec interface graphique**
+Démarrez le serveur Express.js :
+
+```sh
 npm start
 ```
+
+Puis exécutez Locust :
+
+```sh
+locust -f locustfile.py --host=http://localhost:3010
+```
+
+Ouvrez **Locust UI** dans votre navigateur :
+
+```
+http://localhost:8089
+```
+
+- **Nombre d’utilisateurs** : Exemple `1000`
+- **Taux d’arrivée** : Exemple `50` (50 utilisateurs/seconde)
+- **Démarrer le test**
